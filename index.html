@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MakeEzi — Real-time 3D modelling for everyone</title>
+<meta name="description" content="MakeEzi is a desktop 3D modelling app: sketch, extrude, sculpt, generate real screws/bolts and parametric parts, add materials and render — all in real time. One-off price, free demo available.">
+<link rel="icon" href="icon.ico">
+<style>
+  :root{
+    --bg:#1a1a1e; --bg2:#222228; --panel:#26262c; --border:#34343c;
+    --text:#e8e8ec; --muted:#9a9aa6;
+    --blue:#4a9eff; --green:#6fdc8c; --red:#ff7a7a; --purple:#c792ea; --yellow:#ffcb6b;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+  a{color:var(--blue)}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+
+  header.top{position:sticky;top:0;z-index:10;background:rgba(26,26,30,.9);backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}
+  header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{font-weight:800;font-size:19px;letter-spacing:.2px}
+  .brand span{color:var(--blue)}
+  nav a{color:var(--text);text-decoration:none;margin-left:22px;font-size:14px;opacity:.85}
+  nav a:hover{opacity:1}
+
+  .hero{padding:64px 0 40px;text-align:center}
+  .hero h1{font-size:40px;margin:0 0 14px;letter-spacing:-.5px}
+  .hero h1 span{color:var(--blue)}
+  .hero p.sub{color:var(--muted);font-size:18px;max-width:640px;margin:0 auto 30px}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:46px}
+  .btn{display:inline-block;padding:13px 26px;border-radius:9px;font-weight:700;font-size:15px;text-decoration:none;border:1px solid transparent;cursor:pointer}
+  .btn-primary{background:var(--blue);color:#0b1a2b}
+  .btn-primary:hover{background:#6bb0ff}
+  .btn-ghost{background:transparent;color:var(--text);border-color:var(--border)}
+  .btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
+  .price-note{color:var(--muted);font-size:13px;margin-top:-30px;margin-bottom:46px;text-align:center}
+
+  .video-frame{max-width:860px;margin:0 auto 10px;border-radius:12px;overflow:hidden;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,.45)}
+  .video-frame .ratio{position:relative;width:100%;padding-top:56.25%}
+  .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+  .shot{max-width:980px;margin:50px auto 0;border-radius:12px;overflow:hidden;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,.45)}
+  .shot img{display:block;width:100%}
+
+  section{padding:60px 0}
+  h2{font-size:28px;text-align:center;margin:0 0 8px}
+  p.lead{color:var(--muted);text-align:center;max-width:620px;margin:0 auto 42px}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:22px}
+  .card .dot{width:10px;height:10px;border-radius:50%;margin-bottom:12px}
+  .card h3{margin:0 0 8px;font-size:16px}
+  .card p{margin:0;color:var(--muted);font-size:14px}
+
+  .kits{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .kits .grid{grid-template-columns:repeat(4,1fr)}
+  .kits .card{background:var(--panel)}
+
+  .download{text-align:center}
+  .plans{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;max-width:900px;margin:0 auto}
+  .plan{flex:1;min-width:260px;max-width:340px;background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:30px}
+  .plan.full{border-color:var(--blue)}
+  .plan h3{margin:0 0 6px;font-size:20px}
+  .plan .price{font-size:32px;font-weight:800;margin:10px 0}
+  .plan .price small{font-size:14px;color:var(--muted);font-weight:500}
+  .plan ul{text-align:left;color:var(--muted);font-size:14px;padding-left:18px;margin:18px 0 26px}
+  .plan ul li{margin-bottom:6px}
+  .plan .btn{width:100%}
+
+  footer{padding:36px 0;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--border)}
+
+  @media (max-width:760px){
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .kits .grid{grid-template-columns:repeat(2,1fr)}
+    .hero h1{font-size:30px}
+    nav{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">Make<span>Ezi</span></div>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#kits">3D-print kits</a>
+      <a href="#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <h1>Real-time 3D modelling,<br>made <span>easy</span>.</h1>
+  <p class="sub">Sketch, extrude, sculpt and generate parametric parts — with real screws, bolts and nuts for 3D printing — all in one desktop app. No subscription.</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="#download">Download free demo</a>
+    <a class="btn btn-ghost" href="#download">Buy the full version</a>
+  </div>
+
+  <div class="video-frame">
+    <div class="ratio">
+      <iframe src="https://www.youtube.com/embed/xM5Pn3o6CRU" title="See what you can build in MakeEzi" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <div class="shot">
+    <img src="screenshot.png" alt="MakeEzi editing a model, with the shape library, properties panel and real-time viewport" loading="lazy">
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <h2>Everything you need to go from idea to model</h2>
+    <p class="lead">A full modelling toolkit — create, reshape, cut, sculpt, finish — with instant feedback as you work.</p>
+    <div class="grid">
+      <div class="card"><div class="dot" style="background:var(--green)"></div><h3>Sketch, Revolve, Loft, Sweep</h3><p>Draw a 2D profile and extrude it, spin it around an axis, blend between shapes at different heights, or sweep a cross-section along a path — pipes, tubes and rails included.</p></div>
+      <div class="card"><div class="dot" style="background:var(--blue)"></div><h3>Pull — push/pull any face</h3><p>Click a flat face and drag it in or out live, with an optional chamfer on the new walls. Real topology editing, not a trick.</p></div>
+      <div class="card"><div class="dot" style="background:var(--blue)"></div><h3>Bend, Twist, Deform, Hollow</h3><p>Reshape a finished model non-destructively, then clean up and re-smooth the mesh with Remesh.</p></div>
+      <div class="card"><div class="dot" style="background:var(--red)"></div><h3>Combine &amp; Cut &amp; Join</h3><p>Union, subtract or intersect two models, cut holes and grooves, or split a model apart.</p></div>
+      <div class="card"><div class="dot" style="background:var(--purple)"></div><h3>Sculpt brushes</h3><p>Push, pull and smooth fine detail into dense meshes by hand — carve faces, seams and organic shapes.</p></div>
+      <div class="card"><div class="dot" style="background:var(--yellow)"></div><h3>Materials, Pictures &amp; Lighting</h3><p>Metals, plastics and patterns with roughness/metalness sliders; a built-in label maker and texture tools; lighting presets; render to a finished PNG (oil, watercolour, pencil, comic, outline).</p></div>
+      <div class="card"><div class="dot" style="background:var(--green)"></div><h3>Parametric generators</h3><p>Flanges, gears with a true involute profile, extruded profiles (hex, slot, L-bracket and more) with bevels — all driven by real dimensions.</p></div>
+      <div class="card"><div class="dot" style="background:var(--blue)"></div><h3>Knurl &amp; grip patterns</h3><p>Press diamond, straight, ring or spiral knurling into any flat or round surface.</p></div>
+      <div class="card"><div class="dot" style="background:var(--red)"></div><h3>Import, export &amp; share</h3><p>Import/export STL, OBJ and GLB. Save a whole project to reopen later, or share a model as a single self-contained web page — no install needed to view it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="kits" class="kits">
+  <div class="wrap">
+    <h2>Real hardware, ready to 3D print</h2>
+    <p class="lead">A full library of nuts, bolts, screws and screw heads at real sizes (M3–M10 and more), so the kits you build actually go together — with print clearances worked out for you.</p>
+    <div class="grid">
+      <div class="card"><h3>Pulley with weight</h3><p>Bracket, wheel on a sleeve, a real M5 screw and nut as the axle.</p></div>
+      <div class="card"><h3>Planetary gearbox</h3><p>18 parts, real M3 screws and nuts, a threaded knob.</p></div>
+      <div class="card"><h3>Four-cylinder engine</h3><p>Built-up crankshaft, rods, pistons, block with windows — real M3/M6 hardware.</p></div>
+      <div class="card"><h3>Bench vise</h3><p>Three printed parts plus real M8 and M10 screws and nuts.</p></div>
+      <div class="card"><h3>Chain drive</h3><p>28 identical snap-together links, two toothed wheels and a crank.</p></div>
+      <div class="card"><h3>Scissor jack</h3><p>Base, saddle, eight arms, two blocks and a crank.</p></div>
+      <div class="card"><h3>Steampunk desk fan</h3><p>Wood, bronze, brass and steel parts with moving blades — every part editable.</p></div>
+      <div class="card"><h3>…and more</h3><p>Suitcases, robots, drums, lamps, chairs, phone stands and a sculpted skull — open Add → Ready-made examples in the app.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="download" class="download">
+  <div class="wrap">
+    <h2>Try it free, buy once</h2>
+    <p class="lead">No subscription, no account, no license server. The demo lets you explore every tool; the full version adds saving, exporting and rendering out finished pictures.</p>
+    <div class="plans">
+      <div class="plan">
+        <h3>Free demo</h3>
+        <div class="price">Free</div>
+        <ul>
+          <li>Every modelling tool, unlocked</li>
+          <li>All ready-made examples &amp; shape library</li>
+          <li>No saving, exporting or rendered pictures</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://github.com/Wanderoo4444/makeezi-updates/releases/latest" target="_blank" rel="noopener">Download demo (Windows)</a>
+      </div>
+      <div class="plan full">
+        <h3>Full version</h3>
+        <div class="price">One-off <small>· no subscription</small></div>
+        <ul>
+          <li>Everything in the demo</li>
+          <li>Save &amp; reopen projects</li>
+          <li>Export STL / OBJ / GLB</li>
+          <li>Render finished pictures, share as a web page</li>
+          <li>Free updates</li>
+        </ul>
+        <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Buy on Payhip — coming soon</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 MakeEzi. All rights reserved. · <a href="https://www.youtube.com/@MakeEzi" target="_blank" rel="noopener">YouTube &amp; tutorials</a>
+</footer>
+
+</body>
+</html>
