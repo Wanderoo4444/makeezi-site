@@ -22,14 +22,15 @@
 <div class="wrap">
   <div class="brand"><a href="index.html" style="color:inherit;text-decoration:none">Make<span>Ezi</span></a></div>
   <h1>Privacy Policy</h1>
-  <div class="updated">Last updated: 15 November 2026</div>
+  <div class="updated">Last updated: 23 November 2026</div>
 
-  <p>MakeEzi is a desktop application that runs entirely on your own computer. This policy explains the little it does, in plain terms.</p>
+  <p>MakeEzi is a desktop application that runs on your own computer. This policy explains the little it does, in plain terms, including one optional feature (the AI helper) that connects to a service you choose.</p>
 
   <h2>What MakeEzi does not do</h2>
   <ul>
     <li>It does not require an account, sign-in, or internet connection to use.</li>
-    <li>It does not collect, store, or transmit any personal information.</li>
+    <li>It does not contact the internet by itself, and it does not check for updates. (If you get MakeEzi from the Microsoft Store, the Store provides updates.)</li>
+    <li>MakeEzi itself does not collect, store, or transmit any personal information. (The optional AI helper, described below, sends your requests to a service you choose, never to us.)</li>
     <li>It does not include analytics, telemetry, or crash reporting.</li>
     <li>It does not access your files, folders, or other applications except when you explicitly choose to open or save a file through its own dialogs.</li>
   </ul>
@@ -37,8 +38,17 @@
   <h2>Your projects and files</h2>
   <p>Models, pictures, and settings you create or save stay on your own device, in locations you choose. MakeEzi never uploads them anywhere.</p>
 
-  <h2>The one thing it checks online</h2>
-  <p>On startup, MakeEzi makes a single outgoing request to a small, public text file (hosted on GitHub) to see whether a newer version is available. This request does not include your name, files, or any identifying information — it is the same plain request your browser makes to load any public web page. You can also trigger this check manually from the app's menu.</p>
+  <h2>The optional AI helper (MakeEzi AI, experimental)</h2>
+  <p>The full version of MakeEzi has an optional chat helper that can build and edit models from what you type. <b>It is off until you switch it on</b> (File menu). Until you do, and until you send a request, MakeEzi makes no connection at all. The free demo does not include it.</p>
+  <ul>
+    <li><b>You choose the service and use your own account.</b> You paste your own key from a service such as Anthropic (Claude), OpenAI, Google Gemini, OpenRouter or Groq. Each request goes <b>straight from your computer to that service</b>. MakeEzi has no server in between and never receives, sees or stores your requests or the answers.</li>
+    <li><b>What is sent:</b> what you type, plus what the helper asks to see of your model (object names, sizes, positions, materials and the text of labels) and the results of its own tool calls. <b>Your project files and pictures are never sent.</b></li>
+    <li><b>That service's own privacy policy and terms apply</b> to what you send it, and it may charge you for each request. The counter in the panel shows the tokens used.</li>
+    <li><b>Models on your own computer</b> (Ollama or LM Studio) keep the request on your computer or network. Nothing leaves it unless the address you enter is on the internet.</li>
+    <li><b>Your key stays on your computer</b>, encrypted with your operating system's protection, in MakeEzi's settings folder. A button in the AI provider box deletes every saved key. A key is never sent over plain http to a server on the internet.</li>
+    <li>The first time you use it, MakeEzi shows a notice explaining all of this, and sends nothing until you accept.</li>
+    <li>The helper can make mistakes. Check what it builds; Undo works as usual.</li>
+  </ul>
 
   <h2>Payment information</h2>
   <p>If you purchase MakeEzi through a storefront (such as the Microsoft Store), your payment is handled entirely by that storefront under its own privacy policy. MakeEzi itself never sees or stores your payment details.</p>
